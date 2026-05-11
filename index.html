@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DONE. — Task Manager</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <div class="logo">// task.manager v1</div>
+      <h1>GET IT<br><span class="accent">DONE.</span></h1>
+      <p class="subtitle">— your brutally simple task list</p>
+
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-value" id="statTotal">0</span>
+          <span class="stat-label">Total</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-value" id="statPending">0</span>
+          <span class="stat-label">Pending</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-value" id="statDone">0</span>
+          <span class="stat-label">Done</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="add-area">
+      <div class="input-wrap">
+        <input type="text" id="taskInput" placeholder="What needs to be done?" maxlength="200" autocomplete="off" />
+      </div>
+      <button class="add-btn" onclick="addTask()">+ Add</button>
+    </div>
+
+    <div class="progress-wrap">
+      <div class="progress-label">
+        <span>Progress</span>
+        <span id="progressPct">0%</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+    </div>
+
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all" onclick="setFilter('all', this)">All</button>
+      <button class="filter-btn" data-filter="active" onclick="setFilter('active', this)">Active</button>
+      <button class="filter-btn" data-filter="done" onclick="setFilter('done', this)">Completed</button>
+    </div>
+
+    <ul id="taskList"></ul>
+
+    <div class="actions-row">
+      <button class="clear-btn" onclick="clearCompleted()">Clear completed</button>
+    </div>
+
+  </div>
+
+  <script src="style.js"></script>
+</body>
+</html>
